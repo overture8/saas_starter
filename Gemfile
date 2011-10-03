@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+source 'https://code.stripe.com'
 
 gem 'rails', '3.1.0'
 
@@ -14,9 +15,11 @@ gem 'mysql2'
 gem 'json'
 gem 'jquery-rails'
 gem 'devise'
-gem 'chargify_api_ares'
+gem 'stripe'
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
+gem 'simple_form'
+gem 'simple-navigation'
 
 # Use unicorn as the web server
 # gem 'unicorn'
