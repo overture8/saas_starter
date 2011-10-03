@@ -2,9 +2,11 @@
   <h2>Pricing</h2>
 <% end %>
 
-<ul>
+<table>
   <% @plans.each do |plan| %>
-    <li><%= plan.name %></li>
-    <li><%= link_to "Sign Up", sign_up_path(:plan => plan.id) %></li>
+    <tr>
+      <td><%= plan.name %></td>
+      <td><%= link_to "Sign Up", sign_up_path(:plan => plan.id) %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
