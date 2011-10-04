@@ -1,33 +1,15 @@
-<%= content_for :title do %>
-  <h2>Sign up</h2>
-<% end %>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :account_name %>
-    <%= f.text_field :account_name %>
-  </div>
-
-  <%= f.hidden_field :plan, :value => params[:plan] %>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-   <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <%= f.submit "Sign up" %>
+  <%= field_set_tag 'Sign Up' do %>
+    <%= f.input :account_name %>
+    <%= f.input :plan, :input_html => { :value => params[:plan] }, :as => :hidden %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <div class='actions'>
+      <%= f.submit "Sign up", :class => "btn primary" %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
